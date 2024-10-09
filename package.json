@@ -1,5 +1,5 @@
 {
-  "name": "esbuild-ts-lib-starter",
+  "name": "knotta-lsp-server",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.cjs",
@@ -16,27 +16,22 @@
     "package.json"
   ],
   "scripts": {
-    "build:cjs": "esbuild src/index.ts --bundle --format=cjs --outfile=dist/index.cjs",
-    "build:esm": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.mjs",
-    "build": "tsc && npm run build:esm && npm run build:cjs",
-    "build:node:cjs": "npm run build:cjs -- --platform=node",
-    "build:node:esm": "npm run build:esm -- --platform=node",
-    "build:node": "tsc && npm run build:node:esm && npm run build:node:cjs",
-    "watch": "concurrently \"tsc --watch\" \"npm run build:esm -- --watch\" \"npm run build:cjs -- --watch\"",
-    "watch:node": "concurrently \"tsc --watch\" \"npm run build:node:esm -- --watch\" \"npm run build:node:cjs -- --watch\"",
+    "build:cjs": "esbuild src/index.ts --bundle --format=cjs --platform=node --outfile=dist/index.cjs --external:vscode",
+    "build": "tsc && npm run build:cjs",
+    "watch": "concurrently \"tsc --watch\" \"npm run build:cjs -- --watch\"",
     "test": "tsx tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coder-ka/esbuild-ts-lib-starter.git"
+    "url": "git+https://github.com/coder-ka/knotta-lsp-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/coder-ka/esbuild-ts-lib-starter/issues"
+    "url": "https://github.com/coder-ka/knotta-lsp-server/issues"
   },
-  "homepage": "https://github.com/coder-ka/esbuild-ts-lib-starter#readme",
+  "homepage": "https://github.com/coder-ka/knotta-lsp-server#readme",
   "devDependencies": {
     "@types/assert": "^1.5.10",
     "@types/node": "^22.5.0",
@@ -45,5 +40,9 @@
     "esbuild": "^0.20.2",
     "tsx": "^4.9.3",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
   }
 }
