@@ -8,16 +8,14 @@ import {
 import { TextDocument } from "vscode-languageserver-textdocument";
 import { parse } from "knotta";
 
-let connection = createConnection(ProposedFeatures.all);
+const connection = createConnection(ProposedFeatures.all);
 
-let documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
-
-let hasSemanticTokensCapability: boolean = false;
+const documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
 
 connection.onInitialize((params: InitializeParams) => {
-  let capabilities = params.capabilities;
+  const capabilities = params.capabilities;
 
-  hasSemanticTokensCapability = !!(
+  const hasSemanticTokensCapability = !!(
     capabilities.textDocument && capabilities.textDocument.semanticTokens
   );
 
