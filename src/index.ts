@@ -6,7 +6,7 @@ import {
   InitializeResult,
 } from "vscode-languageserver/node";
 import { TextDocument } from "vscode-languageserver-textdocument";
-import { parse } from "knotta";
+import { parse } from "ontype";
 
 const connection = createConnection(ProposedFeatures.all);
 
@@ -25,7 +25,7 @@ connection.onInitialize((params: InitializeParams) => {
         ? {
             documentSelector: [
               {
-                language: "knotta",
+                language: "ontype",
               },
             ],
             legend: {

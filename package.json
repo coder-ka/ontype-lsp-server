@@ -1,5 +1,5 @@
 {
-  "name": "knotta-lsp-server",
+  "name": "ontype-lsp-server",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.cjs",
@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coder-ka/knotta-lsp-server.git"
+    "url": "git+https://github.com/coder-ka/ontype-lsp-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/coder-ka/knotta-lsp-server/issues"
+    "url": "https://github.com/coder-ka/ontype-lsp-server/issues"
   },
-  "homepage": "https://github.com/coder-ka/knotta-lsp-server#readme",
+  "homepage": "https://github.com/coder-ka/ontype-lsp-server#readme",
   "devDependencies": {
     "@types/assert": "^1.5.10",
     "@types/node": "^22.5.0",
@@ -41,7 +41,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "knotta": "^1.0.0",
+    "ontype": "^1.0.0",
     "vscode-languageserver": "^9.0.1",
     "vscode-languageserver-textdocument": "^1.0.12"
   }
