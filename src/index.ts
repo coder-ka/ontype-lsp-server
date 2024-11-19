@@ -36,6 +36,7 @@ connection.onInitialize((params: InitializeParams) => {
                 "decorator",
                 "property",
                 "operator",
+                "number",
               ],
               tokenModifiers: ["declaration"],
             },
@@ -94,6 +95,7 @@ connection.languages.semanticTokens.on(async (params) => {
               "prop-optional": 5,
               "prop-type-name": 2,
               "prop-ref": 4,
+              "prop-length": 6,
               "prop-decorator": 3,
             }[type] || 0,
             {
