@@ -66,7 +66,7 @@ connection.languages.semanticTokens.on(async (params) => {
       })(),
       {
         enableAst: false,
-        ast: { baseModels: [], types: [] },
+        ast: { baseModels: [], types: [], enums: [] },
         enableSemanticTokens: true,
         semanticTokens: [],
       },
@@ -92,16 +92,21 @@ connection.languages.semanticTokens.on(async (params) => {
               "type-name": 2,
               "type-decorator": 3,
               "prop-name": 4,
-              "prop-optional": 5,
               "prop-type-name": 2,
               "prop-ref": 4,
               "prop-length": 6,
               "prop-decorator": 3,
+              "prop-optional": 5,
+              enum: 1,
+              "enum-name": 2,
+              "enum-item-name": 4,
+              "enum-item-integer-value": 6,
+              "enum-item-string-value": 0,
             }[type] || 0,
             {
               "type-name": 1,
               "prop-name": 1,
-            }[type] || 0,
+            }[type as string] || 0,
           ];
         }
       ),
