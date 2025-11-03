@@ -1,6 +1,6 @@
 {
   "name": "ontype-lsp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/index.cjs",
   "exports": {
@@ -41,7 +41,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "ontype": "^1.0.0",
+    "ontype": "^1.0.9",
     "vscode-languageserver": "^9.0.1",
     "vscode-languageserver-textdocument": "^1.0.12"
   }

@@ -66,7 +66,7 @@ connection.languages.semanticTokens.on(async (params) => {
       })(),
       {
         enableAst: false,
-        ast: { baseModels: [], types: [], enums: [] },
+        ast: { imports: [], types: [], enums: [] },
         enableSemanticTokens: true,
         semanticTokens: [],
       },
@@ -87,6 +87,8 @@ connection.languages.semanticTokens.on(async (params) => {
             length,
             {
               import: 1,
+              "import-alias": 2,
+              "import-from": 1,
               string: 0,
               type: 1,
               "type-name": 2,
