@@ -59,20 +59,20 @@ connection.languages.semanticTokens.on(async (params) => {
 
   if (text) {
     const {
-      result: { semanticTokens },
+      state: { semanticTokens },
     } = await parse(
       (async function* () {
         yield text;
       })(),
       {
-        enableAst: false,
-        ast: { types: [], enums: [] },
         enableSemanticTokens: true,
         semanticTokens: [],
+        stringBuffer: "",
+        stringBufferStartInlineIndex: null,
       },
       {
         onError: "continue",
-      }
+      },
     );
 
     return {
@@ -86,17 +86,15 @@ connection.languages.semanticTokens.on(async (params) => {
             inlineIndex - (prevLine === line ? prevInlineIndex : 0),
             length,
             {
-              string: 0,
-              type: 1,
+              "type-keyword": 1,
               "type-name": 2,
-              "type-decorator": 3,
               "prop-name": 4,
               "prop-type-name": 2,
-              "prop-ref": 4,
-              "prop-length": 6,
+              "prop-type-ref": 4,
+              "prop-type-length": 6,
               "prop-decorator": 3,
               "prop-optional": 5,
-              enum: 1,
+              "enum-keyword": 1,
               "enum-name": 2,
               "enum-item-name": 4,
               "enum-item-integer-value": 6,
@@ -108,7 +106,7 @@ connection.languages.semanticTokens.on(async (params) => {
               "prop-name": 1,
             }[type as string] || 0,
           ];
-        }
+        },
       ),
     };
   } else {
