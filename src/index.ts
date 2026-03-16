@@ -67,8 +67,6 @@ connection.languages.semanticTokens.on(async (params) => {
       {
         enableSemanticTokens: true,
         semanticTokens: [],
-        stringBuffer: "",
-        stringBufferStartInlineIndex: null,
       },
       {
         onError: "continue",
