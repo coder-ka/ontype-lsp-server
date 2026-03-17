@@ -95,8 +95,6 @@ connection.languages.semanticTokens.on(async (params) => {
               "enum-keyword": 1,
               "enum-name": 2,
               "enum-item-name": 4,
-              "enum-item-integer-value": 6,
-              "enum-item-string-value": 0,
             }[type as string] || 0,
 
             {
