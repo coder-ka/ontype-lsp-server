@@ -37,6 +37,7 @@ connection.onInitialize((params: InitializeParams) => {
                 "property",
                 "operator",
                 "number",
+                "enum",
               ],
               tokenModifiers: ["declaration"],
             },
@@ -94,7 +95,7 @@ connection.languages.semanticTokens.on(async (params) => {
               "prop-optional": 5,
               "enum-keyword": 1,
               "enum-name": 2,
-              "enum-item-name": 4,
+              "enum-item-name": 7,
             }[type as string] || 0,
 
             {
